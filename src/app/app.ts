@@ -1,4 +1,3 @@
-// biome-ignore assist/source/organizeImports: false positive
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
