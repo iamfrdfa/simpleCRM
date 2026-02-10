@@ -5,11 +5,11 @@
         </div>
 
         <ul class="menu-items">
-            <li>
+            <li [routerLink]="['/']" routerLinkActive="active">
                 <mat-icon>fact_check</mat-icon>
                 Dashboard
             </li>
-            <li>
+            <li [routerLink]="['/user']" routerLinkActive="active">
                 <mat-icon>perm_identity</mat-icon>
                 User
             </li>
@@ -24,6 +24,8 @@
             </mat-toolbar-row>
         </mat-toolbar>
 
-        <router-outlet></router-outlet>
+        <div class="router-container">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </mat-drawer-container>

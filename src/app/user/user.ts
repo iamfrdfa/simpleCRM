@@ -1,11 +1,23 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {MatIcon} from '@angular/material/icon';
+import {MatFabButton} from '@angular/material/button';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialog} from '@angular/material/dialog';
+import {DialogAddUser} from '../dialog-add-user/dialog-add-user';
 
 @Component({
-  selector: 'app-user',
-  imports: [],
-  templateUrl: './user.html',
-  styleUrl: './user.scss',
+    selector: 'app-user',
+    imports: [
+        MatIcon,
+        MatFabButton,
+        MatTooltipModule
+    ],
+    templateUrl: './user.html',
+    styleUrl: './user.scss',
 })
 export class User {
-
+    constructor(public dialog: MatDialog) { }
+    openDialog() {
+        this.dialog.open(DialogAddUser)
+    }
 }

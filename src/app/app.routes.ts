@@ -3,8 +3,8 @@ import { Dashboard } from './dashboard/dashboard';
 import { User } from './user/user';
 
 export const routes: Routes = [
-    { path: '', component: Dashboard },          // Root
-    { path: 'dashboard', component: Dashboard }, // /dashboard
-    { path: 'user', component: User },           // /user
-    { path: '**', redirectTo: '' },             // optional: Fallback
+    { path: '', component: Dashboard },
+    { path: 'dashboard', component: Dashboard },
+    { path: 'user', component: User },
+    { path: '**', redirectTo: '' }
 ];

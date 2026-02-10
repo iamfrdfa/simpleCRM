@@ -1,0 +1,17 @@
+mat-dialog-content {
+    padding: 20px 24px !important;
+
+    div {
+        > mat-form-field:first-of-type {
+            margin-right: 16px;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+    }
+}
+
+.dialog-wrapper {
+    height: auto;
+}
