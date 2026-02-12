@@ -9,6 +9,7 @@ import {MatIcon} from '@angular/material/icon';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {provideNativeDateAdapter} from '@angular/material/core';
+import {User} from '../../models/user.class';
 
 
 @Component({
@@ -34,4 +35,11 @@ import {provideNativeDateAdapter} from '@angular/material/core';
 })
 export class DialogAddUser {
 
+    user = new User;
+    birthDate: Date | undefined;
+    saveUser() {
+        // @ts-ignore
+        this.user.birthDate = this.birthDate.getTime()
+        console.log('Current user is:', this.user);
+    }
 }
