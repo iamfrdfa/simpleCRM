@@ -5,11 +5,11 @@ import {
     inject,
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
 import { routes } from './app.routes';
+
 import {
-    MAT_DATE_LOCALE,
     MAT_DATE_FORMATS,
+    MAT_DATE_LOCALE,
     provideNativeDateAdapter,
 } from '@angular/material/core';
 
@@ -17,11 +17,10 @@ import { environment } from '../environments/environment';
 
 // ✅ AngularFire
 import { provideFirebaseApp, FirebaseApp } from '@angular/fire/app';
-import { provideFirestore } from '@angular/fire/firestore';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
-// ✅ Firebase SDK
+// ✅ Firebase SDK (nur initializeApp!)
 import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore';
 
 // Optik: dd.MM.yyyy
 export const DE_DATE_FORMATS = {
@@ -44,10 +43,10 @@ export const appConfig: ApplicationConfig = {
         { provide: MAT_DATE_LOCALE, useValue: 'de-DE' },
         { provide: MAT_DATE_FORMATS, useValue: DE_DATE_FORMATS },
 
-        // ✅ Firebase App zuerst
+        // ✅ 1) Firebase App
         provideFirebaseApp(() => initializeApp(environment.firebase)),
 
-        // ✅ Firestore an die DI-App binden (kein DEFAULT-App-Race)
+        // ✅ 2) Firestore EXPLIZIT an diese App binden (Fix für app/no-app)
         provideFirestore(() => getFirestore(inject(FirebaseApp))),
     ],
 };
