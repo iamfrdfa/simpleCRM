@@ -1,15 +1,66 @@
 .user-container {
-
+    mat-card {
+        padding: 16px 0;
+    }
 }
 
 .user-table {
     width: 100%;
+    border-collapse: collapse;
 
     th {
         color: rgba(0, 0, 0, 0.5);
         font-size: 14px;
         font-weight: 500;
         text-align: start;
+    }
+
+    // ✅ Stabiler "Padding links/rechts" Ersatz für tr { padding: 0 16px; }
+    // (Padding auf tr ist in Tabellen unzuverlässig)
+    tr > th,
+    tr > td {
+        padding: 0 16px;
+    }
+
+    tr {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        td {
+            height: 48px;
+
+            // dein linkes Extra-Padding für die erste Spalte bleibt wie gehabt
+            &:first-child {
+                padding-left: 16px;
+
+                // ✅ erste Spalte: kein Pointer
+                cursor: default;
+            }
+        }
+
+        th {
+            &:first-child {
+                padding-left: 16px;
+            }
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.09);
+        }
+
+        // ✅ Header-Zeile: kein Pointer + kein Hover-Farbwechsel
+        // Robuster als &:first-child (weil thead/tbody/DOM-Struktur variieren kann)
+        &:has(th) {
+            cursor: default;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
     }
 }
 
