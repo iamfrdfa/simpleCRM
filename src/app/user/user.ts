@@ -5,13 +5,15 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogAddUser} from '../dialog-add-user/dialog-add-user';
 import { User } from '../../models/user.class';
+import {MatCard} from '@angular/material/card';
 
 @Component({
     selector: 'app-user',
     imports: [
         MatIcon,
         MatFabButton,
-        MatTooltipModule
+        MatTooltipModule,
+        MatCard
     ],
     templateUrl: './user.html',
     styleUrl: './user.scss',
