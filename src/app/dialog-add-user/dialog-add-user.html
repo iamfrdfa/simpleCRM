@@ -9,19 +9,26 @@
         <div>
             <mat-form-field appearance="outline" class="mr-16">
                 <mat-label>Firstname</mat-label>
-                <input [disabled]="loading()" [(ngModel)]="user.firstName" matInput placeholder="Placeholder" />
+                <input [disabled]="loading()" [(ngModel)]="user.firstName" matInput placeholder="Type in your firstname" />
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Lastname</mat-label>
-                <input [disabled]="loading()" [(ngModel)]="user.lastName" matInput placeholder="Placeholder" />
+                <input [disabled]="loading()" [(ngModel)]="user.lastName" matInput placeholder="Type in your lastname" />
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>E-mail address</mat-label>
+                <input [disabled]="loading()" [(ngModel)]="user.email" matInput placeholder="Type in your E-mail address" />
             </mat-form-field>
         </div>
 
         <div>
             <mat-form-field appearance="outline" class="full-width">
                 <mat-label>Birth date</mat-label>
-                <input [disabled]="loading()" [(ngModel)]="birthDate" matInput placeholder="Placeholder" [matDatepicker]="picker" />
+                <input [disabled]="loading()" [(ngModel)]="birthDate" matInput placeholder="Type in your birthdate" [matDatepicker]="picker" />
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -30,19 +37,19 @@
         <div>
             <mat-form-field appearance="outline" class="full-width">
                 <mat-label>Street + House No.</mat-label>
-                <input [disabled]="loading()" [(ngModel)]="user.street" matInput placeholder="Placeholder" />
+                <input [disabled]="loading()" [(ngModel)]="user.street" matInput placeholder="Type in your street + house number" />
             </mat-form-field>
         </div>
 
         <div>
             <mat-form-field appearance="outline">
                 <mat-label>ZIP Code</mat-label>
-                <input [disabled]="loading()" [(ngModel)]="user.zipCode" matInput placeholder="Placeholder" />
+                <input [disabled]="loading()" [(ngModel)]="user.zipCode" matInput placeholder="Type in your zip code" />
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>City</mat-label>
-                <input [disabled]="loading()" [(ngModel)]="user.city" matInput placeholder="Placeholder" />
+                <input [disabled]="loading()" [(ngModel)]="user.city" matInput placeholder="Type in your city" />
             </mat-form-field>
         </div>
     </mat-dialog-content>

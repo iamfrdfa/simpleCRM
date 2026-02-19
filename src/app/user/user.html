@@ -4,15 +4,21 @@
         <table class="user-table">
             <tr>
                 <th>Name</th>
+                <th>Nachname</th>
                 <th>E-Mail</th>
+                <th>Straße</th>
                 <th>City</th>
             </tr>
 
-            <tr *ngFor="let user of allUsers">
-                <td>{{ user.firstname }} {{ user.lastname }}</td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.city }}</td>
-            </tr>
+            @for (user of allUsers(); track user.id) {
+                <tr routerLink="/user/{{ user.id }}">
+                    <td>{{ user.firstName }}</td>
+                    <td>{{ user.lastName }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.street }}</td>
+                    <td>{{ user.city }}</td>
+                </tr>
+            }
         </table>
     </mat-card>
 
